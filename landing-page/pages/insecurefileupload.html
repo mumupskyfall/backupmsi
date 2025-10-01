@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/insecurefileupload.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-container">
+        <div class="content">
+            <h1 class="title">File Upload</h1>
+            <p class="subtitle">Share your files with us</p>
+            
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="upload-text">Click to upload files</div>
+                    <div class="upload-subtext">or drag and drop files here</div>
+                    <input type="file" id="fileInput" class="file-input" multiple onchange="handleFileSelect(event)">
+                    <button type="button" class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-plus"></i> Choose Files
+                    </button>
+                </div>
+                
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>File uploaded successfully!</strong>
+                </div>
+                
+                <div class="flag-display" id="flagDisplay">
+                    <h4 style="color: #fca5a5; margin-bottom: 1rem;">🎉 Exploit Successful!</h4>
+                    <div class="flag-text" id="flagText"></div>
+                </div>
+                
+                <div class="file-list">
+                    <div class="upload-stats">
+                        <span><i class="fas fa-files"></i> Uploaded Files: <span id="fileCount">0</span></span>
+                        <span><i class="fas fa-hdd"></i> Total Size: <span id="totalSize">0 KB</span></span>
+                    </div>
+                    <div id="fileListContainer">
+                        <div style="text-align: center; color: rgba(255, 255, 255, 0.6); padding: 2rem;">
+                            <i class="fas fa-folder-open" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                            No files uploaded yet
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/insecurefileupload.js"></script>
+</body>
+</html>

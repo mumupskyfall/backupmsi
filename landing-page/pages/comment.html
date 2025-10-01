@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/comment.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-container">
+        <div class="content">
+            <h1 class="title">Comment</h1>
+            <p class="subtitle">Leave an message to us</p>
+            
+                <form class="comment-form" id="commentForm">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment" placeholder="Write your comment here..." 
+                                onblur="processInput(this.value)" 
+                                onkeyup="livePreview(this.value)"></textarea>
+                        <div id="livePreview" style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 5px; color: #ccc; font-size: 0.9rem; min-height: 20px;">
+                            Live preview will appear here...
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Post Comment
+                        </button>
+                        <button type="button" class="clear-btn" onclick="clearComments()">
+                            <i class="fas fa-trash"></i>
+                            Clear All
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="comments-section" id="commentsSection">
+                    <h3 style="color: white; margin-bottom: 1rem;">
+                        <i class="fas fa-comments"></i>
+                        Comments
+                    </h3>
+                    <div class="demo-comments" id="demoComments">
+                        <!-- Demo comments will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/comment.js"></script>
+</body>
+</html>
